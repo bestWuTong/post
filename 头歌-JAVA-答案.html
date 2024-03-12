@@ -56,13 +56,15 @@
 <h1 id="头歌-java-答案"><span class="prefix"></span><span class="content">头歌-JAVA-答案</span><span class="suffix"></span></h1>
 <blockquote>
 <p>发布时间：2024-03-12 19:09<br>
-修改时间：暂无修改<br>
+修改时间：2024-03-12 22:04<br>
 【作者：無同 | 未经许可，请勿转载！】</p>
 </blockquote>
 <p><strong>目录</strong></p>
 <p></p><div class="preview-toc"><ul><li class="preview-toc-item preview-toc-l1"><a href="#头歌-java-答案">头歌-JAVA-答案</a><ul><li class="preview-toc-item preview-toc-l2"><a href="#java入门---java初体验">Java入门 - Java初体验</a></li>
 <li class="preview-toc-item preview-toc-l2"><a href="#java入门---变量与数据类型">Java入门 - 变量与数据类型</a></li>
-<li class="preview-toc-item preview-toc-l2"><a href="#java入门---运算符和表达式">Java入门 - 运算符和表达式</a></li></ul></li></ul></div><p></p>
+<li class="preview-toc-item preview-toc-l2"><a href="#java入门---运算符和表达式">Java入门 - 运算符和表达式</a></li>
+<li class="preview-toc-item preview-toc-l2"><a href="#java入门---分支结构">Java入门 - 分支结构</a></li>
+<li class="preview-toc-item preview-toc-l2"><a href="#学习-java-顺序结构之无输入之输出给定图案">学习-Java 顺序结构之无输入之输出给定图案</a></li></ul></li></ul></div><p></p>
 <h2 id="java入门---java初体验"><span class="prefix"></span><span class="content">Java入门 - Java初体验</span><span class="suffix"></span></h2>
 <p><strong>第1关 Java第一课</strong></p>
 <pre><code>public class HelloWorld{
@@ -85,8 +87,9 @@ System.out.println("薪资：15K");
 
 }
 </code></pre>
-<p><strong>第2关 JAVA入门测试题</strong><br>
-C   C   D   BC</p>
+<p><strong>第2关 JAVA入门测试题</strong></p>
+<pre><code>C   C   D   BC
+</code></pre>
 <p><strong>第3关：JAVA关键字</strong></p>
 <pre><code>package key;
 
@@ -104,8 +107,9 @@ System.out.println("hello eduCoder");
 
 /********* End *********/
 </code></pre>
-<p><strong>第4关：JAVA关键字测试题</strong><br>
-ABD</p>
+<p><strong>第4关：JAVA关键字测试题</strong></p>
+<pre><code>ABD
+</code></pre>
 <p><strong>第5关：JAVA标识符</strong></p>
 <pre><code>package chapter2;
 /********* Begin *********/
@@ -121,8 +125,9 @@ public class HelloWorld {
 /********* End *********/
 
 </code></pre>
-<p><strong>第6关：JAVA标识符测试题</strong><br>
-CD   D</p>
+<p><strong>第6关：JAVA标识符测试题</strong></p>
+<pre><code>CD   D
+</code></pre>
 <p><strong>第7关：JAVA注释</strong></p>
 <pre><code>package chapter2;
 
@@ -140,8 +145,9 @@ public class HelloEduCoder {
 }
 
 </code></pre>
-<p><strong>第8关：JAVA注释测试题</strong><br>
-ADE</p>
+<p><strong>第8关：JAVA注释测试题</strong></p>
+<pre><code>ADE
+</code></pre>
 <h2 id="java入门---变量与数据类型"><span class="prefix"></span><span class="content">Java入门 - 变量与数据类型</span><span class="suffix"></span></h2>
 <p><strong>第1关：变量与常量</strong></p>
 <pre><code>package chapter2.step1;
@@ -175,8 +181,9 @@ public class HelloVariable {
 }
 
 </code></pre>
-<p><strong>第3关：变量测试题</strong><br>
-BD   C</p>
+<p><strong>第3关：变量测试题</strong></p>
+<pre><code>BD   C
+</code></pre>
 <p><strong>第4关：JAVA数据类型</strong></p>
 <pre><code>package chapter2;
 
@@ -216,8 +223,9 @@ public class TypeConvert {
 }
 
 </code></pre>
-<p><strong>第6关：JAVA数据类型和类型转换测试题</strong><br>
-CD   CD   AD</p>
+<p><strong>第6关：JAVA数据类型和类型转换测试题</strong></p>
+<pre><code>CD   CD   AD
+</code></pre>
 <p><strong>第7关：Scanner的使用</strong></p>
 <pre><code>package chapter2.step7;
 /********* Begin *********/
@@ -253,6 +261,134 @@ public class HelloWorld{
 }
 </code></pre>
 <h2 id="java入门---运算符和表达式"><span class="prefix"></span><span class="content">Java入门 - 运算符和表达式</span><span class="suffix"></span></h2>
+<p><strong>第1关：算数运算符</strong></p>
+<pre><code>package step1;
+import java.util.Scanner;
+
+public class Cal {
+	public static void main(String[] args) {
+		/*********start*********/
+		Scanner sc= new Scanner(System.in);
+        int a,b;
+        System.out.print("请输入第一个整数\n");
+        a=sc.nextInt();
+        System.out.print("请输入第二个整数\n");
+        b=sc.nextInt();
+        System.out.println("两数相加的结果为："+(a+b));
+        System.out.println("两数相减的结果为："+(a-b));
+        System.out.println("两数相乘的结果为："+(a*b));
+        System.out.println("两数相除的结果为："+(a/b));
+        System.out.println("两数取余数的结果为："+(a%b));
+        sc.close();
+		/*********end*********/
+	}
+
+}
+
+</code></pre>
+<p><strong>第2关：关系运算符</strong></p>
+<pre><code>package step2;
+import java.util.Scanner;
+
+public class Relative {
+	public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        /*********start*********/
+		System.out.println("a==b="+(a==b));
+		System.out.println("a!=b="+(a!=b));
+        System.out.println("a&gt;b="+(a&gt;b));
+        System.out.println("a&lt;b="+(a&lt;b));
+        System.out.println("b&gt;=a="+(b&gt;=a));
+        System.out.println("b&lt;=a="+(b&lt;=a));
+		
+		/*********end*********/
+	}
+
+}
+
+</code></pre>
+<p><strong>第3关：逻辑运算符</strong></p>
+<pre><code>package step3;
+import java.util.Scanner;
+
+
+
+public class testLogic {
+	public static void main(String[] args) {
+        
+		Scanner sc=new Scanner(System.in);
+  		boolean a=sc.nextBoolean();
+        boolean b=sc.nextBoolean();
+        boolean c=sc.nextBoolean();
+        
+		/*********start  *********/
+        System.out.println(a&amp;&amp;b);
+        System.out.println(b);
+        System.out.println(b||c);
+        System.out.println(a||c);
+
+		/*********end  *********/
+	}
+
+}
+
+</code></pre>
+<p><strong>第4关：三元运算符</strong></p>
+<pre><code>package step4;
+
+import java.util.Scanner;
+
+public class TestYear {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+        int year=sc.nextInt();
+        boolean result;
+        /********start********/
+        
+        result=((year%400==0)||((year%4==0)&amp;&amp;(year%100!=0)))?true:false;
+        
+        System.out.println(year + "年是否为闰年:" + result);
+        
+        /********end********/
+	}
+
+}
+
+</code></pre>
+<p><strong>第5关：运算符的优先级</strong></p>
+<pre><code>package step5;
+import java.util.Scanner;
+
+public class TestDemo5 {
+	public static void main(String[] args) {
+			Scanner sc=new Scanner(System.in);
+		System.out.println("输入：");
+		int m=sc.nextInt();
+		int n=sc.nextInt();
+		
+		System.out.println("输出：");
+        
+		/*****start*****/
+		
+		System.out.println( m*2+n*2 );
+        
+		System.out.println( (m-n)%3 );
+		
+		System.out.println((m-n)/2 + (m+n)*2);
+		
+		/*****end*****/
+	}
+
+}
+
+</code></pre>
+<p><strong>第6关：选择自测题</strong></p>
+<pre><code>B   A   C   C   A   A
+</code></pre>
+<h2 id="java入门---分支结构"><span class="prefix"></span><span class="content">Java入门 - 分支结构</span><span class="suffix"></span></h2>
+<h2 id="学习-java-顺序结构之无输入之输出给定图案"><span class="prefix"></span><span class="content">学习-Java 顺序结构之无输入之输出给定图案</span><span class="suffix"></span></h2>
 
 				</div>
 				</div>
