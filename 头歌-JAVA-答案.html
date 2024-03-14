@@ -63,8 +63,8 @@
 <p></p><div class="preview-toc"><ul><li class="preview-toc-item preview-toc-l1"><a href="#头歌-java-答案">头歌-JAVA-答案</a><ul><li class="preview-toc-item preview-toc-l2"><a href="#java入门---java初体验">Java入门 - Java初体验</a></li>
 <li class="preview-toc-item preview-toc-l2"><a href="#java入门---变量与数据类型">Java入门 - 变量与数据类型</a></li>
 <li class="preview-toc-item preview-toc-l2"><a href="#java入门---运算符和表达式">Java入门 - 运算符和表达式</a></li>
-<li class="preview-toc-item preview-toc-l2"><a href="#java入门---分支结构">Java入门 - 分支结构</a></li>
-<li class="preview-toc-item preview-toc-l2"><a href="#学习-java-顺序结构之无输入之输出给定图案">学习-Java 顺序结构之无输入之输出给定图案</a></li></ul></li></ul></div><p></p>
+<li class="preview-toc-item preview-toc-l2"><a href="#学习-java-顺序结构之无输入之输出给定图案">学习-Java 顺序结构之无输入之输出给定图案</a></li>
+<li class="preview-toc-item preview-toc-l2"><a href="#java入门---分支结构">Java入门 - 分支结构</a></li></ul></li></ul></div><p></p>
 <h2 id="java入门---java初体验"><span class="prefix"></span><span class="content">Java入门 - Java初体验</span><span class="suffix"></span></h2>
 <p><strong>第1关 Java第一课</strong></p>
 <pre><code>public class HelloWorld{
@@ -387,8 +387,202 @@ public class TestDemo5 {
 <p><strong>第6关：选择自测题</strong></p>
 <pre><code>B   A   C   C   A   A
 </code></pre>
-<h2 id="java入门---分支结构"><span class="prefix"></span><span class="content">Java入门 - 分支结构</span><span class="suffix"></span></h2>
 <h2 id="学习-java-顺序结构之无输入之输出给定图案"><span class="prefix"></span><span class="content">学习-Java 顺序结构之无输入之输出给定图案</span><span class="suffix"></span></h2>
+<p><strong>第1关：学习-Java顺序结构之无输入输出给定图案</strong></p>
+<pre><code>/**
+ * 任务：输出实心等腰三角形。
+ * 类名为：OutputTriangle
+ */
+ 
+public class OutputTriangle {
+    public static void main(String[] args) {
+    	 // 请在下面的 Begin-End 处，按照所给的代码注释完成相应代码的编写
+         /********** Begin **********/
+         // 使用空格和*，向控制台输出一个高为4，底为7的等腰三角形，最后一个输出采用不换行输出
+        System.out.println("   *");
+        System.out.println("  ***");
+        System.out.println(" *****");
+        System.out.println("*******");
+
+        /********** End **********/
+
+    }
+} 
+
+</code></pre>
+<h2 id="java入门---分支结构"><span class="prefix"></span><span class="content">Java入门 - 分支结构</span><span class="suffix"></span></h2>
+<p><strong>第1关：Java分支结构之 if…else</strong></p>
+<pre><code>package step2;
+
+import java.util.Scanner;
+
+public class HelloIfStep2 {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		/******start******/
+		System.out.println("请输入学员成绩：");
+		int score = input.nextInt();
+		if (score&gt;=85) {
+            System.out.println("优，非常棒！");
+        } else {
+            System.out.println("良，下次加油！");
+        }
+		
+		
+		
+		/******end******/
+	}
+}
+
+</code></pre>
+<p><strong>第2关：if语句测试题</strong></p>
+<pre><code>C   C   D
+</code></pre>
+<p><strong>第3关：Java分支结构之多重if</strong></p>
+<pre><code>package step3;
+
+import java.util.Scanner;
+
+public class HelloStep3 {
+	public static void main(String[] args) {
+		System.out.println("星级成绩评定系统");
+		System.out.println("请输入成绩：");
+		Scanner sc = new Scanner(System.in);
+		/******start******/
+        int score = sc.nextInt();
+        if (score&gt;=90){
+            System.out.println("*****五星成绩");
+        } else if (score&gt;=80 &amp;&amp; score&lt;90) {
+            System.out.println("****四星成绩");
+        } else if (score&gt;=70 &amp;&amp; score&lt;80) {
+            System.out.println("***三星成绩");
+        } else if (score&gt;=60 &amp;&amp; score&lt;70) {
+            System.out.println("**俩星成绩");
+        } else if (score&lt;60) {
+            System.out.println("无星成绩");
+        }
+
+		/******end******/
+	}
+}
+
+</code></pre>
+<p><strong>第4关：Java分支结构之Switch</strong></p>
+<pre><code>package step4;
+
+import java.util.Scanner;
+
+public class HelloSwitch {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("请输入月份：");
+		
+		int input = sc.nextInt();	//获取输入的月份
+		
+        //通过输入的月份来判断当前季节并输出
+		/*****start*****/
+		switch (input) {
+            case 3:
+            case 4:
+            case 5:
+                System.out.println(input+"月是春天");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println(input+"月是夏天");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println(input+"月是秋天");
+                break;
+            case 12:
+            case 1:
+            case 2:
+                System.out.println(input+"月是冬天");
+                break;
+            
+        }
+		/*****end*****/
+		
+	}
+}
+
+</code></pre>
+<p><strong>第5关：Switch语句测试题</strong></p>
+<pre><code>C   D
+</code></pre>
+<p><strong>第6关：来吧，我是BOSS！</strong></p>
+<pre><code>package step5;
+
+import java.util.Scanner;
+
+public class Practice {
+    
+    	final static Scanner sc = new Scanner(System.in);	//创建扫描仪
+
+		//第一题
+		public void first(){
+			System.out.println("请输入人数：");
+            int input = sc.nextInt();		//获取输入的数据
+            
+			/*****start*****/
+			if (input&lt;10){
+                System.out.println("打半场");
+            } else {
+                System.out.println("打全场");
+            }
+
+			/*****end*****/
+		}
+		
+		//第二题
+		public void second(){
+			System.out.println("请输入今天星期几：");
+            int input = sc.nextInt();		//获取输入的数据
+            
+			/*****start*****/
+            if (input==1) {
+                System.out.println("今天吃米饭");
+            } else if (input==2) {
+                System.out.println("今天吃牛排");
+            } else if (input==3) {
+                System.out.println("今天吃鸡排");
+            } else {
+                System.out.println("今天吃红烧肉");
+            }
+
+			/*****end*****/
+		}	
+		
+		//第三题
+		public void third(){
+			System.out.println("请输入今天星期几：");
+            int input = sc.nextInt();		//获取输入的数据
+            
+			/*****start*****/
+            switch (input) {
+                case 1:
+                    System.out.println("今天吃米饭");
+                    break;
+                case 2:
+                    System.out.println("今天吃牛排");
+                    break;
+                case 3:
+                    System.out.println("今天吃鸡排");
+                    break;
+                default:
+                    System.out.println("今天吃红烧肉");
+                    break;
+            }
+
+			/*****end*****/
+		}
+}
+
+</code></pre>
 
 				</div>
 				</div>
