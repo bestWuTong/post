@@ -64,7 +64,9 @@
 <li class="preview-toc-item preview-toc-l2"><a href="#java入门---变量与数据类型">Java入门 - 变量与数据类型</a></li>
 <li class="preview-toc-item preview-toc-l2"><a href="#java入门---运算符和表达式">Java入门 - 运算符和表达式</a></li>
 <li class="preview-toc-item preview-toc-l2"><a href="#学习-java-顺序结构之无输入之输出给定图案">学习-Java 顺序结构之无输入之输出给定图案</a></li>
-<li class="preview-toc-item preview-toc-l2"><a href="#java入门---分支结构">Java入门 - 分支结构</a></li></ul></li></ul></div><p></p>
+<li class="preview-toc-item preview-toc-l2"><a href="#java入门---分支结构">Java入门 - 分支结构</a></li>
+<li class="preview-toc-item preview-toc-l2"><a href="#java入门---循环结构基础">Java入门 - 循环结构基础</a></li>
+<li class="preview-toc-item preview-toc-l2"><a href="#java入门---循环结构进阶">Java入门 - 循环结构进阶</a></li></ul></li></ul></div><p></p>
 <h2 id="java入门---java初体验"><span class="prefix"></span><span class="content">Java入门 - Java初体验</span><span class="suffix"></span></h2>
 <p><strong>第1关 Java第一课</strong></p>
 <pre><code>public class HelloWorld{
@@ -582,6 +584,232 @@ public class Practice {
 		}
 }
 
+</code></pre>
+<h2 id="java入门---循环结构基础"><span class="prefix"></span><span class="content">Java入门 - 循环结构基础</span><span class="suffix"></span></h2>
+<p><strong>第1关：Java循环结构之while循环</strong></p>
+<pre><code>package step1;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		
+		/*****start*****/
+		int i = 1;
+        while (i&lt;=6) {
+            System.out.println("做了"+i+"个俯卧撑");
+            i = i+1;
+        }
+
+		/*****end*****/
+
+	}
+}
+
+</code></pre>
+<p><strong>第2关：Java循环结构之while循环练习</strong></p>
+<pre><code>package step2;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		
+		
+		/*****start*****/
+		int m = 1;
+        int n = 0;
+        while (m&lt;=100) {
+            n = m + n;
+            m++;
+        }
+		System.out.println("1到100相加的结果为"+n);
+		
+		/*****end*****/
+		
+		
+		
+	}
+}
+
+</code></pre>
+<p><strong>第3关： Java循环结构之do…while循环</strong></p>
+<pre><code>package step3;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		int count= 0;	//定义变量存储6的倍数出现的次数
+		/*****start*****/
+		int i = 1;
+        do {
+            if(i%6==0){
+                count++;
+            }
+            i++;
+        } while(i&lt;=100);
+		
+		/*****end*****/
+		System.out.println("6的倍数出现的次数为：" + count);
+	}
+}
+
+</code></pre>
+<p><strong>第4关：while，do…while循环测试题</strong></p>
+<pre><code>B   C   B
+</code></pre>
+<p><strong>第5关：break和continue关键字</strong></p>
+<pre><code>package step4;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		
+		int i = 0;
+		
+		while(i &lt;= 20){
+			i++;
+			/*****start*****/
+			if(i%2==0){
+                System.out.println( i + "是偶数");
+                continue;
+			}
+			System.out.println(i + "是奇数");
+			
+            if(i==13) {
+                break;
+            }
+			
+			/*****end*****/
+		}
+		
+	}
+}
+
+</code></pre>
+<p><strong>第6关：break和continue关键字测试题</strong></p>
+<pre><code>C
+</code></pre>
+<p><strong>第7关：Java循环结构之for循环</strong></p>
+<pre><code>package step5;
+
+import java.util.Scanner;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("请给定一个自然数N：");
+		int N = sc.nextInt();//获取输入的整数N
+		int sum = 1;		
+		/*****start*****/
+		for(int i=1;i&lt;=N;i++){
+            sum=sum*i;
+        }
+		
+		/*****end*****/
+		
+		System.out.println("自然数N的阶乘为" + sum);
+	}
+}
+
+</code></pre>
+<p><strong>第8关：for循环测试题</strong></p>
+<pre><code>B
+</code></pre>
+<h2 id="java入门---循环结构进阶"><span class="prefix"></span><span class="content">Java入门 - 循环结构进阶</span><span class="suffix"></span></h2>
+<p><strong>1. for循环的进阶使用-嵌套循环（1）</strong></p>
+<pre><code>package step1;
+
+public class ForPractice1 {
+	public static void test() {
+		/*****start*****/
+        for(int m=1;m&lt;=10;m++){
+            for(int n=1;n&lt;=10;n++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+		
+		
+		
+		/*****end*****/
+	}
+}
+
+</code></pre>
+<p><strong>2. for循环的进阶使用-嵌套循环（2）</strong></p>
+<pre><code>package step2;
+
+public class ForPractice2 {
+	public static void main(String[] args) {
+		/*****start*****/
+		
+		//在这里打印出正三角形 
+		for(int m=1;m&lt;=10;m++){
+            for(int n=1;n&lt;=m;n++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+		System.out.println("——————————我是华丽的分界线——————————");
+		//在这里打印出倒三角形
+		for(int x=1;x&lt;=10;x++){
+            for(int y=10;y&gt;=x;y--){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+		/*****end*****/
+	}
+}
+
+</code></pre>
+<p><strong>3. 99乘法表</strong></p>
+<pre><code>package step3;
+
+public class ForPractice3 {
+	public static void main(String[] args) {
+		/*****start*****/
+		for(int n=1;n&lt;=9;n++){
+            for(int m=1;m&lt;=n;m++){
+                System.out.print(m+"*"+n+"="+(m*n)+"\t");
+            }
+            System.out.println();
+        }
+		
+		/*****end*****/
+	}
+}
+
+</code></pre>
+<p><strong>4. 综合练习之ATM取款机</strong></p>
+<pre><code>package step4;
+ 
+import java.util.Scanner;
+ 
+public class ForPractice4 {
+	public static void main(String[] args) {
+		/*****start*****/
+	 Scanner sc=new Scanner(System.in);
+     System.out.println("欢迎使用中国人民银行ATM取款机");
+	 int sum=1000;
+	 int i=2;
+	 while(i==2){
+		 System.out.println("输入取款金额：");
+		
+         int out=sc.nextInt();
+		 if(out&gt;sum){
+			 System.out.println("目前余额："+sum+"无法满足您的取款需求！");
+		 }else{
+			 System.out.println("剩余金额："+(sum-out)+"，是否继续（'1'：结束，'2'：继续）：");
+			  i=sc.nextInt();
+			 sum-=out;
+		 }
+	 }
+	  System.out.println("取款结束！");
+
+		/*****end*****/
+	}
+}
+</code></pre>
+<p><strong>5. 选择题</strong></p>
+<pre><code>D   BC   B
 </code></pre>
 
 				</div>
