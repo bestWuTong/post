@@ -66,7 +66,10 @@
 <li class="preview-toc-item preview-toc-l2"><a href="#学习-java-顺序结构之无输入之输出给定图案">学习-Java 顺序结构之无输入之输出给定图案</a></li>
 <li class="preview-toc-item preview-toc-l2"><a href="#java入门---分支结构">Java入门 - 分支结构</a></li>
 <li class="preview-toc-item preview-toc-l2"><a href="#java入门---循环结构基础">Java入门 - 循环结构基础</a></li>
-<li class="preview-toc-item preview-toc-l2"><a href="#java入门---循环结构进阶">Java入门 - 循环结构进阶</a></li></ul></li></ul></div><p></p>
+<li class="preview-toc-item preview-toc-l2"><a href="#java入门---循环结构进阶">Java入门 - 循环结构进阶</a></li>
+<li class="preview-toc-item preview-toc-l2"><a href="#java循环与分支语句编程练习">Java循环与分支语句编程练习</a></li>
+<li class="preview-toc-item preview-toc-l2"><a href="#java入门---数组基础">Java入门 - 数组基础</a></li>
+<li class="preview-toc-item preview-toc-l2"><a href="#java入门---数组进阶">Java入门 - 数组进阶</a></li></ul></li></ul></div><p></p>
 <h2 id="java入门---java初体验"><span class="prefix"></span><span class="content">Java入门 - Java初体验</span><span class="suffix"></span></h2>
 <p><strong>第1关 Java第一课</strong></p>
 <pre><code>public class HelloWorld{
@@ -810,6 +813,477 @@ public class ForPractice4 {
 </code></pre>
 <p><strong>5. 选择题</strong></p>
 <pre><code>D   BC   B
+</code></pre>
+<h2 id="java循环与分支语句编程练习"><span class="prefix"></span><span class="content">Java循环与分支语句编程练习</span><span class="suffix"></span></h2>
+<p><strong>1. 将给定的整数进行由小至大排序</strong></p>
+<pre><code>package step4;
+
+ 
+public class LianXi_Sort {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * 定义三个整数x,y,z，将这三个整数由小到大排序并输出。
+		 * 例如定义 int x = 9; int y = 10; int z = 8;   -- &gt; x的值改成8  y的值改成9 z的值改成10
+		 * 
+		 * 实现思路：通过if语句对x y z 的值进行匹配，比如x大于y则x和y进行数据交换
+		 * */
+		 java.util.Scanner sc = new java.util.Scanner(System.in);
+		//获取平台分配的x的值
+		int x = sc.nextInt();
+		//获取平台分配的y的值
+		int y = sc.nextInt();;
+		//获取平台分配的z的值
+		int z = sc.nextInt();;
+
+		/**********begin**********/
+	    int m=0;
+        if(x&gt;y){
+            m=x;
+            x=y;
+            y=m;
+        }
+        if(y&gt;z){
+            m=y;
+            y=z;
+            z=m;
+        }
+	    /**********end**********/
+		System.out.print("x:"+x+" y:"+y+" z:"+z);
+		
+	}
+
+}
+
+</code></pre>
+<p><strong>2. 根据给定的不重复的四个正整数，组成无重复数字的三位数并输出</strong></p>
+<pre><code>package step3;
+ 
+public class LianXi {
+ 
+	
+	public static void main(String[] args) {
+		/*
+		 * 假设平台分配的四个整数为 1 2 3 4
+		 * 那么百位有可能是  1 2 3 4   十位：有可能是  1 2 3 4    个位：有可能是  1 2 3 4，
+		 * 要求是 百位 十位  各位上的数字不能重复
+		 * 比如：123  124  132  134 等都满足条件
+		 * 比如：122  131  121  232 等都不满足条件
+		 * 
+		 * */
+ 
+		 //定义长度为4的int数组
+		 int[] array = new int[4];    
+		 //创建Scanner对象获取平台输入的信息
+         java.util.Scanner sc = new java.util.Scanner(System.in);
+         //获取平台给定的输入值并填充至数组中
+		 for(int i=0;i&lt;array.length;i++){
+			  array[i] = sc.nextInt();
+		 }
+		
+		//通过第一层循环控制百位的数字    array[i]表示百位的值
+		for (int i = 0; i &lt; array.length; i++) {
+			//通过第二层循环控制十位的数字    array[j]表示十位的值
+			for (int j = 0; j &lt; array.length; j++) {		
+				//通过第三层循环控制个位的数字   array[k]表示个位的值
+				for(int k = 0;k&lt; array.length;k++) {
+					
+					/**********begin**********/
+                    if(i!=j){
+                        if(j!=k){
+                            if(i!=k){
+                                System.out.print(array[i]);
+                                System.out.print(array[j]);
+                                System.out.print(array[k]);
+                                System.out.println();
+                            }
+                        }
+                    }
+ 
+					/**********end**********/
+				}
+			}
+		}	
+	}
+ 
+}
+</code></pre>
+<p><strong>3. 通过for循环打印实心三角形</strong></p>
+<pre><code>package step1;
+public class ShiXinSanJiaoXing
+{
+	public static void main(String[] args) 
+	{
+		//创建Scanner对象用于获取平台给定的输入信息
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+        //定义需要打印的总行数
+		int lineNum = sc.nextInt();
+ 
+		/*
+		 i（行号）      空格数量（lineNum－i）　   星星数量 （２＊i　－１）    
+			1                    5                      1
+			2                    4                      3
+			3                    3                      5
+			4                    2                      7
+			5                    1                      9
+			6                    0                      11
+		
+		*/
+ 
+		//通过外循环控制需要打印的行数
+		for(int i=1;i&lt;=lineNum;i++){
+ 
+          /**********begin**********/
+          
+		  //通过内循环（1）控制需要打印的空格 
+		  
+		 for(int j=1;j&lt;=lineNum-i;j++){
+          System.out.print(" ");
+		 
+		 }
+ 
+          //通过内循环（2）控制需要打印的星星的数量
+		  for(int j=1;j&lt;=2*i-1;j++){
+			  System.out.print("*");
+		  
+		 }
+ 
+	      /**********end**********/
+ 
+		  //当前行中的空格以及星星打印完成之后进行换行操作 \n表示换行
+           System.out.print("\n");
+		
+		}
+ 
+ 
+		
+	}
+}
+</code></pre>
+<p><strong>4. 找出1至1000以内的质数</strong></p>
+<pre><code>package step2;
+ 
+ 
+public class FindZhiShu {
+ 
+ 
+	public static void main(String[] args) {
+		  
+ 
+		   /**********begin**********/
+		   for(int i=2;i&lt;=1000;i++){
+			   boolean zs=true;
+			   for(int j=2;j&lt;i;j++){
+				   if(i%j==0){
+					   zs=false;
+					   break;
+				   }
+			   }
+			   if(zs){
+				   System.out.print(i+" ");
+			   }
+		   }
+				
+ 
+ 
+           /**********end**********/	
+	}
+}
+</code></pre>
+<h2 id="java入门---数组基础"><span class="prefix"></span><span class="content">Java入门 - 数组基础</span><span class="suffix"></span></h2>
+<p><strong>1. 初识数组</strong></p>
+<pre><code>package step1;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		/********** Begin **********/
+		int scores[]={91,88,60};
+
+		System.out.println("数组的第一个值为：" +scores[0] );   //在这里输出数组的第一个值
+		System.out.println("数组的第二个值为：" +scores[1] );	//在这里输出数组的第二个值
+		System.out.println("数组的第三个值为：" +scores[2] );	//在这里输出数组的第三个值
+		/********** End **********/
+	}
+}
+
+</code></pre>
+<p><strong>2. 数组的使用</strong></p>
+<pre><code>package step2;
+
+import java.util.Scanner;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		
+		
+		/********** Begin **********/
+		//在这里定义一个长度为4的字符串数组，用来存放学生姓名
+		String[] stuNames = new String [4];  
+		
+		//在这里给stuNames数组赋值  分别为   张三,张无忌,张三丰,张岁山
+		stuNames[0]="张三";
+		stuNames[1]="张无忌";
+		stuNames[2]="张三丰";
+        stuNames[3]="张岁山";
+		//在这里输出stuNames数组中的数据
+		System.out.println("数组中的第一个数据为：" + stuNames[0]);
+		System.out.println("数组中的第二个数据为：" + stuNames[1]);
+		System.out.println("数组中的第三个数据为：" + stuNames[2]);
+		System.out.println("数组中的第四个数据为：" + stuNames[3]);
+		
+		
+		int[] scores;
+		Scanner sc = new Scanner(System.in);
+		//在这里使用Scanner获取系统输入的整数,并用获取到的数据来设置scores数组的长度
+		int length = sc.nextInt();
+		scores = new int[length];
+		/********** End **********/
+		
+		System.out.println("数组scores的长度为：" + scores.length);
+	}
+}
+
+</code></pre>
+<p><strong>3. 选择题（1）</strong></p>
+<pre><code>C   D   ABCD
+</code></pre>
+<p><strong>4. 数组练习-平均值和最大值</strong></p>
+<pre><code>package step3;
+
+import java.util.Scanner;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int[] scores = new int[sc.nextInt()];
+		
+		//循环给数组赋值
+		for(int i = 0 ; i&lt; scores.length;i++){
+			scores[i] = sc.nextInt();
+		}
+		/********** Begin **********/
+		//在这里计算数组scores的平均值和最大值
+        double sum=0;
+		for(int m=0;m&lt;scores.length;m++){
+            sum=sum+scores[m];
+        }
+		
+        int max=0;
+		for(int n=0;n&lt;scores.length;n++){
+            if(scores[n]&gt;max){
+                max=scores[n];
+            }
+        }
+		
+		
+		
+		
+		
+		System.out.println("平均值：" +(sum/scores.length) );
+		System.out.println("最大值：" +max );
+		/********** End **********/
+	}
+}
+
+</code></pre>
+<p><strong>5. 二维数组</strong></p>
+<pre><code>package step4;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		/********** Begin **********/
+		int[][] scores={
+            {92,85},
+            {91,65},
+            {90,33}
+        };
+		
+		for(int m=0;m&lt;scores.length;m++){
+            for(int n=0;n&lt;scores[m].length;n++){
+                System.out.print(scores[m][n]);
+                System.out.println();
+            }
+            
+        }
+		
+        
+		for(int m=0;m&lt;scores.length;m++){
+            for(int n=0;n&lt;scores[m].length;n++){
+                if(n==0){
+                    scores[m][n]=1;
+                }else{
+                    scores[m][n]=2;
+                }
+            }
+        }
+
+        for(int m=0;m&lt;scores.length;m++){
+            for(int n=0;n&lt;scores[m].length;n++){
+                System.out.print(scores[m][n]);
+                System.out.println();
+            }
+            
+        }
+		/********** End **********/
+	}
+}
+
+</code></pre>
+<p><strong>6. 选择题（2）</strong></p>
+<pre><code>C   B
+</code></pre>
+<h2 id="java入门---数组进阶"><span class="prefix"></span><span class="content">Java入门 - 数组进阶</span><span class="suffix"></span></h2>
+<p><strong>1. 数组的复制</strong></p>
+<pre><code>package step1;
+
+import java.util.Scanner;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		//动态构建arr1
+		int[] arr1 = new int[3];
+		Scanner sc = new Scanner(System.in);
+		for(int i = 0 ; i&lt; arr1.length ; i++){
+			arr1[i] = sc.nextInt();
+		}
+		/********** Begin **********/
+		//创建数组arr2
+		int[] arr2=new int[3];
+		
+		
+		//使用for循环将arr1的数据复制给arr2
+		for(int m=0;m&lt;arr2.length;m++){
+            arr2[m]=arr1[m];
+        }
+		
+		
+		//输出arr2
+		for(int m=0;m&lt;arr2.length;m++){
+            System.out.println(arr2[m]);
+        }
+		
+		/********** End **********/
+	}
+}
+
+</code></pre>
+<p><strong>2. 数组中元素的查找</strong></p>
+<pre><code>package step2;
+
+import java.util.Scanner;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		//str为要查找的字符串
+		String str = sc.next();
+		
+		/********** Begin **********/
+		//创建数组   arr  给数组赋值 {"张三","张三丰","张无忌","王二麻子","张富贵"}
+		String arr[]=new String[]{"张三","张三丰","张无忌","王二麻子","张富贵"};
+		for(int m=0;m&lt;arr.length;m++){
+            if(arr[m].equals(str)){
+                System.out.println(str+"在数组的第"+(m+1)+"个位置");
+            }
+        }
+		
+		/********** End **********/
+	}
+}
+
+</code></pre>
+<p><strong>3. 交换算法</strong></p>
+<pre><code>package step3;
+
+import java.util.Scanner;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		/********** Begin **********/
+		//将a的值赋给b   b的值赋给a
+		int c=0;
+		c=a;
+		a=b;
+		b=c;
+		
+
+		/********** End **********/
+		System.out.println(a);
+		System.out.println(b);
+	}
+	
+}
+
+</code></pre>
+<p><strong>4. 选择排序</strong></p>
+<pre><code>package step4;
+ 
+import java.util.Arrays;
+import java.util.Scanner;
+ 
+public class HelloWorld {
+	
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//动态创建数组
+		int[] arr = new int[sc.nextInt()];
+		for(int i = 0 ; i&lt; arr.length ; i++){
+			arr[i] = sc.nextInt();
+		}
+		/********** Begin **********/
+	for(int j = 0;j &lt; arr.length-1; j++){
+	for (int i = j; i &lt; arr.length-1; i++) {
+    	if(arr[j] &lt; arr[i+1]){
+        	int temp = arr[j];
+        	arr[j] = arr[i+1];
+        	arr[i+1] = temp;
+    	}
+	}		
+	}	
+	System.out.println(Arrays.toString(arr));
+		/********** End **********/
+	}
+}
+</code></pre>
+<p><strong>5. 冒泡排序</strong></p>
+<pre><code>package step5;
+ 
+import java.util.Arrays;
+import java.util.Scanner;
+ 
+public class HelloWorld {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//动态创建数组
+		int[] arr = new int[sc.nextInt()];
+		for(int i = 0 ; i&lt; arr.length ; i++){
+			arr[i] = sc.nextInt();
+		}
+		/********** Begin **********/
+		
+		for(int j = 0; j &lt; arr.length-1; j++){
+		for( int i = 0; i &lt; arr.length-1; i++){
+			if(arr[i] &gt; arr[i+1]){
+				int temp = arr[i];
+				arr[i] = arr[i+1];
+				arr[i+1] = temp;
+			}
+		}
+		}
+		System.out.println(Arrays.toString(arr));
+		/********** End **********/
+	}
+}	
 </code></pre>
 
 				</div>
